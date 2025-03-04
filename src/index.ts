@@ -48,6 +48,8 @@ wss.on("connection" , (socket) => {
                 socket,
                 room : parsedMessage.payload.roomId
             })
+            
+            socket.send(JSON.stringify(parsedMessage.payload.roomId))
         }
         if(parsedMessage.type == "chat")
         {
