@@ -58,7 +58,7 @@ wss.on("connection" , (socket) => {
             {
                 if(allSockets[i].room == currentUserRoom)
                 {
-                    allSockets[i].socket.send(parsedMessage.payload.message)
+                    allSockets[i].socket.send(JSON.stringify(parsedMessage.payload.message))
                 }
             }
         }
